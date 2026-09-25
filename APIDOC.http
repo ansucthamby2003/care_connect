@@ -1,0 +1,36 @@
+# list
+###
+GET http://127.0.0.1:8000/doctors/
+Accept: application/json
+
+# add
+###
+POST http://127.0.0.1:8000/doctors/
+Content-Type: application/json
+
+{
+    "name":"Arun Kumar",
+    "specialization":"surgeon",
+    "fee":300,
+    "qualification":"mbbs,ms(general surgery)",
+    "email":"arun@gmail.com"
+}
+
+#retrieve
+###
+GET http://127.0.0.1:8000/doctors/1/
+Accept: application/json
+
+#update
+###
+PUT http://127.0.0.1:8000/doctors/1/
+Content-Type: application/json
+
+{
+    "qualification":"mbbs,ms,mch"
+}
+
+#delete
+###
+DELETE http://127.0.0.1:8000/doctors/1/
+Accept: application/json
