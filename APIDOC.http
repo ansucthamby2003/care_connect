@@ -34,3 +34,42 @@ Content-Type: application/json
 ###
 DELETE http://127.0.0.1:8000/doctors/1/
 Accept: application/json
+
+#V2 end points
+
+# list
+###
+GET http://127.0.0.1:8000/v2/doctors/
+Accept: application/json
+
+#create
+###
+POST http://127.0.0.1:8000/v2/doctors/
+Content-Type: application/json
+
+{
+    "name":"Arun Kumar",
+    "specialization":"dermatology",
+    "fee":300,
+    "qualification":"mbbs,ms(general surgery)",
+    "email":"arunkumard@gmail.com"
+} 
+
+#retrieve
+###
+GET http://127.0.0.1:8000/v2/doctors/2/
+Accept: application/json
+
+#update
+###
+PUT http://127.0.0.1:8000/doctors/3/
+Content-Type: application/json
+
+{
+    "qualification":"mbbs,ms,mch"
+}
+
+#delete
+###
+DELETE http://127.0.0.1:8000/doctors/2/
+Accept: application/json

@@ -18,9 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from staff.views import DoctorsCreateListView
 from staff.views import DoctorsRetrieveUpdateDeleteView
+from staff_v2 import views
+from staff_v2 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('doctors/',DoctorsCreateListView.as_view()),
     path('doctors/<int:pk>/',DoctorsRetrieveUpdateDeleteView.as_view()),
-]
+    path('v2/doctors/',views.DoctorListCreateView.as_view()),
+    path('v2/doctors/<int:pk>/',views.DoctorRetrieveUpdateDeleteView.as_view()),
+    path('v2/doctors/<int:pk>/',views.DoctorRetrieveUpdateDeleteView.as_view()),
+    ]
