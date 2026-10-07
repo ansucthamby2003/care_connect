@@ -9,6 +9,11 @@ from staff_v2.serializers import DoctorSerializer
 # Create your views here.
 
 class DoctorListCreateView(APIView):
+
+    authentication_classes=[authentication.BasicAuthentication]
+
+    permission_classes=[permissions.IsAdminUser]
+    
     def get(self,request):
         qs=Doctor.objects.all()
         serializer_instance=DoctorSerializer(qs,many=True)
