@@ -16,3 +16,8 @@ class DoctorSerializer(serializers.Serializer):
         if fee<250:
             raise serializers.ValidationError("invalid fee , fee>250")
         return validated_data
+
+class UserSerializer(serializers.Serializer):
+    username=serializers.CharField()
+    email=serializers.EmailField()
+    password=serializers.CharField()

@@ -73,3 +73,14 @@ Content-Type: application/json
 ###
 DELETE http://127.0.0.1:8000/doctors/2/
 Accept: application/json
+
+#API call for creating Admin User
+###
+POST http://127.0.0.1:8000/v2/admin-register/
+Content-Type: application/json
+
+{
+    "username":"admin_user",
+    "email":"adminuser@gmail.com",
+    "password":"adminuser@123"
+}
