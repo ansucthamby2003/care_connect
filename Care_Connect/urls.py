@@ -20,6 +20,7 @@ from staff.views import DoctorsCreateListView
 from staff.views import DoctorsRetrieveUpdateDeleteView
 from staff_v2 import views
 from staff_v2 import views
+from bookings.views import AppointmentListCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +30,5 @@ urlpatterns = [
     path('v2/doctors/<int:pk>/',views.DoctorRetrieveUpdateDeleteView.as_view()),
     path('v2/doctors/<int:pk>/',views.DoctorRetrieveUpdateDeleteView.as_view()),
     path('v2/admin-register/',views.AdminRegisterView.as_view()),
+    path('appointments/',AppointmentListCreateView.as_view()),
     ]

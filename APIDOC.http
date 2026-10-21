@@ -41,18 +41,20 @@ Accept: application/json
 ###
 GET http://127.0.0.1:8000/v2/doctors/
 Accept: application/json
+Authorization: Basic admin_user:adminuser@123
 
 #create
 ###
 POST http://127.0.0.1:8000/v2/doctors/
 Content-Type: application/json
+Authorization: Basic admin_user:adminuser@123
 
 {
     "name":"Arun Kumar",
     "specialization":"dermatology",
     "fee":300,
     "qualification":"mbbs,ms(general surgery)",
-    "email":"arunkumard@gmail.com"
+    "email":"arunkumardoc@gmail.com"
 } 
 
 #retrieve
@@ -62,11 +64,15 @@ Accept: application/json
 
 #update
 ###
-PUT http://127.0.0.1:8000/doctors/3/
+PUT http://127.0.0.1:8000/doctors/6/
 Content-Type: application/json
 
 {
-    "qualification":"mbbs,ms,mch"
+    "name":"sreelal divakaran",
+    "specialization":"orthopedics",
+    "fee":300,
+    "qualification":"mbbs,ms(general surgery)",
+    "email":"sreelal@gmail.com"
 }
 
 #delete
@@ -83,4 +89,24 @@ Content-Type: application/json
     "username":"admin_user",
     "email":"adminuser@gmail.com",
     "password":"adminuser@123"
+}
+
+#appointment calls---
+
+# API call for list all
+###
+GET http://127.0.0.1:8000/appointments/
+Accept: application/json
+
+#api call for booking an appointment
+###
+POST http://127.0.0.1:8000/appointments/
+Content-Type: application/json
+
+{
+    "patient_name":"tom",
+    "phone":8676845345,
+    "doctor":2,
+    "appointment_date":"2026-10-1",
+    "problem":"weezing"
 }
