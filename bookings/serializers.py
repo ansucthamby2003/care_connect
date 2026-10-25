@@ -1,5 +1,7 @@
 from rest_framework import serializers
 
+from datetime import datetime
+
 class AppointmentSerializer(serializers.Serializer):
     patient_name=serializers.CharField()
     phone=serializers.CharField()
@@ -9,3 +11,11 @@ class AppointmentSerializer(serializers.Serializer):
     appointment_time=serializers.TimeField(read_only=True)
     problem=serializers.CharField()
     create_at=serializers.DateTimeField(read_only=True)
+
+    def validate(self,validated_data):
+        appointment_date=validated_data.get("appointment_date")
+        print("app_date",appointment_date)
+        print(datetime.today().date)
+        if appointment_date<datetime.today().date():
+            raise serializers.ValidationError("Invalid Date")
+        return validated_data

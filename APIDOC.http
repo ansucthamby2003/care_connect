@@ -104,9 +104,9 @@ POST http://127.0.0.1:8000/appointments/
 Content-Type: application/json
 
 {
-    "patient_name":"tom",
+    "patient_name":"hari",
     "phone":8676845345,
-    "doctor":2,
-    "appointment_date":"2026-10-1",
+    "doctor":3,
+    "appointment_date":"2026-11-1",
     "problem":"weezing"
 }
