@@ -50,11 +50,12 @@ Content-Type: application/json
 Authorization: Basic admin_user:adminuser@123
 
 {
-    "name":"Arun Kumar",
-    "specialization":"dermatology",
+    "id":2,
+    "name":"Anaswara gupta",
+    "specialization":"endocrinology",
     "fee":300,
     "qualification":"mbbs,ms(general surgery)",
-    "email":"arunkumardoc@gmail.com"
+    "email":"anaswara@gmail.com"
 } 
 
 #retrieve
@@ -64,16 +65,17 @@ Accept: application/json
 
 #update
 ###
-PUT http://127.0.0.1:8000/doctors/6/
+PUT http://127.0.0.1:8000/doctors/7/
 Content-Type: application/json
 
 {
-    "name":"sreelal divakaran",
-    "specialization":"orthopedics",
+    "id":1,
+    "name":"venkat chithambaram",
+    "specialization":"gastroenterology",
     "fee":300,
     "qualification":"mbbs,ms(general surgery)",
-    "email":"sreelal@gmail.com"
-}
+    "email":"venkatmbbs@gmail.com"
+} 
 
 #delete
 ###
@@ -104,9 +106,9 @@ POST http://127.0.0.1:8000/appointments/
 Content-Type: application/json
 
 {
-    "patient_name":"hari",
+    "patient_name":"lucas",
     "phone":8676845345,
-    "doctor":3,
+    "doctor":6,
     "appointment_date":"2026-11-1",
     "problem":"weezing"
 }
